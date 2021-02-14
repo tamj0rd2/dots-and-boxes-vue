@@ -1,0 +1,8 @@
+**/node_modules/**/*
+.git
+.vscode
+.nuxt
+dist
+docker-compose.yml
+docker-compose.override.yml
+Dockerfile

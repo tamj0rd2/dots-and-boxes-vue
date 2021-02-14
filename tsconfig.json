@@ -13,8 +13,9 @@
     "sourceMap": true,
     "strict": true,
     "noEmit": true,
+    "rootDir": "./",
     "experimentalDecorators": true,
-    "baseUrl": ".",
+    "baseUrl": "./",
     "paths": {
       "~/*": [
         "./*"
@@ -25,7 +26,8 @@
     },
     "types": [
       "@nuxt/types",
-      "@types/node"
+      "@types/node",
+      "@types/jest"
     ]
   },
   "exclude": [
