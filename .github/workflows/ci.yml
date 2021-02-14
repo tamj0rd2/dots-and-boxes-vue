@@ -11,22 +11,20 @@ on:
       - master
 
 jobs:
-  ci:
-    runs-on: ${{ matrix.os }}
-
-    strategy:
-      matrix:
-        os: [ubuntu-latest]
-        node: [14]
-
+  tests:
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎
         uses: actions/checkout@master
 
-      - name: Setup node env 🏗
+      - name: Read .nvmrc
+        run: echo ::set-output name=NVMRC::$(cat .nvmrc)
+        id: nvm
+
+      - name: Setup Node.jobs
         uses: actions/setup-node@v2.1.2
         with:
-          node-version: ${{ matrix.node }}
+          node-version: ${{ steps.nvm.outputs.NVMRC }}
 
       - name: Cache node_modules 📦
         uses: actions/cache@v2
@@ -44,3 +42,14 @@ jobs:
 
       - name: Run tests 🧪
         run: npm run test
+
+  deploy:
+    if: ${{ github.ref == 'refs/heads/master' }}
+    needs: tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Deploy to heroku
+        run: ./deploy.sh
+        env:
+          HEROKU_API_KEY: ${{ secrets.HEROKU_APP_TOKEN }}

@@ -1,4 +1,4 @@
-FROM node:12.20.1-alpine as base
+FROM node:15.8.0-alpine3.10 as base
 
 # RUN apk add util-linux
 # RUN apk add --no-cache --virtual .build-deps alpine-sdk python
