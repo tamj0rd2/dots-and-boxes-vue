@@ -1,4 +1,11 @@
-# dots
+# Dots and boxes
+
+![ci](https://github.com/tamj0rd2/dots-and-boxes-vue/workflows/ci/badge.svg)
+
+I decided to make a dots and boxes game as a way to mess around with
+Vue and web sockets.
+
+Live demo: https://dots-andboxes.herokuapp.com/
 
 ## Build Setup
 
