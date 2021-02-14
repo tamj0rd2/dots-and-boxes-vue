@@ -27,5 +27,6 @@ FROM base as prod
 RUN npm run build
 
 # https://nuxtjs.org/docs/2.x/features/configuration#edit-host-and-port
-ENV NUXT_HOST=0.0.0.0
+ENV HOST=0.0.0.0
+ENV NODE_ENV=production
 CMD ["npm", "start"]
