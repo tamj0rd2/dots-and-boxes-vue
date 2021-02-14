@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "lib": ["esnext", "dom"],
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "rootDir": "../../",
+    "baseUrl": "../../",
+    "typeRoots": ["../../node_modules/@types"],
+    "strict": true,
+    "noImplicitAny": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "strictNullChecks": true,
+    "inlineSourceMap": true,
+    "noEmit": false,
+    "outDir": "../../out",
+    "composite": true
+  },
+  "include": ["./**/*.ts"],
+  "files": ["./next-shim.d.ts", "../../nuxt.config.ts"]
+}

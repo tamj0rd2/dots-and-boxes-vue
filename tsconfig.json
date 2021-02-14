@@ -12,7 +12,11 @@
     "allowJs": true,
     "sourceMap": true,
     "strict": true,
-    "noEmit": true,
+    "noEmit": false,
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "outDir": "./out",
+    "composite": true,
     "rootDir": "./",
     "experimentalDecorators": true,
     "baseUrl": "./",
@@ -30,9 +34,16 @@
       "@types/jest"
     ]
   },
+  "include": [
+    "nuxt.config.ts",
+    "src/client/**/*",
+    "./nuxt.config.ts",
+  ],
+  "files": ["vue-shim.d.ts"],
   "exclude": [
     "node_modules",
-    ".nuxt",
-    "dist"
+    ".*/**/*",
+    "dist",
+    "out"
   ]
 }

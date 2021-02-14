@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "outDir": "./out",
+    "incremental": true,
+    "noErrorTruncation": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true
+  },
+  "references": [
+    {
+      "path": "./tsconfig.json"
+    },
+    {
+      "path": "./src/server/tsconfig.json"
+    },
+  ],
+  "exclude": [
+    "node_modules",
+    "out",
+    ".*/**/*",
+    "dist",
+  ]
+}

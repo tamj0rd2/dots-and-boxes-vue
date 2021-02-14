@@ -1,7 +1,11 @@
-export default {
+import { NuxtConfig } from '@nuxt/types'
+
+const config: NuxtConfig = {
+  dev: process.env.NODE_ENV !== 'production',
+  srcDir: 'src/client',
+  telemetry: false,
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: false,
-
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'Dots and boxes',
@@ -37,3 +41,5 @@ export default {
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
 }
+
+export default config

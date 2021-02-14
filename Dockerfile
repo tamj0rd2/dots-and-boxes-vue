@@ -1,8 +1,6 @@
 FROM node:15.8.0-alpine3.10 as base
 
-# RUN apk add util-linux
-# RUN apk add --no-cache --virtual .build-deps alpine-sdk python
-RUN apk add --no-cache netcat-openbsd
+RUN apk add --no-cache --virtual .build-deps alpine-sdk python netcat-openbsd util-linux
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
@@ -13,15 +11,7 @@ RUN npm ci
 
 COPY .babelrc .eslintrc.js .prettierrc jest.config.js nuxt.config.ts \
   tsconfig.json vue-shim.d.ts ./
-COPY ./assets ./assets
-COPY ./components ./components
-COPY ./layouts ./layouts
-COPY ./middleware ./middleware
-COPY ./pages ./pages
-COPY ./plugins ./plugins
-COPY ./static ./static
-COPY ./store ./store
-COPY ./test ./test
+COPY ./src ./src
 
 FROM base as prod
 RUN npm run build
