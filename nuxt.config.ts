@@ -4,7 +4,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'dots',
+    title: 'Dots and boxes',
     htmlAttrs: {
       lang: 'en',
     },
