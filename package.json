@@ -23,7 +23,7 @@
     "@nuxt/typescript-runtime": "^2.0.1",
     "core-js": "^3.9.0",
     "http-status-codes": "^2.1.4",
-    "nuxt": "^2.14.12",
+    "nuxt": "^2.15.3",
     "source-map-support": "^0.5.19",
     "ts-node": "^9.1.1",
     "tsconfig-paths": "^3.9.0"
